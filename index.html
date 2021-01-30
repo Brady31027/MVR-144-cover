@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>object-fit</title>
+        <style>
+
+          div {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            height: 940px;
+          }
+
+          video {
+            width: 400px;
+            height: 225px;
+            margin: 10px 0;
+            border: 1px solid #000;
+          }
+
+          .narrow {
+            width: 225px;
+            height: 400px;
+          }
+
+          .fill {
+            object-fit: fill;
+          }
+
+          .contain {
+            object-fit: contain;
+          }
+
+          .cover {
+            object-fit: cover;
+          }
+
+          .none {
+            object-fit: none;
+          }
+
+          .scale-down {
+            object-fit: scale-down;
+          }
+
+      </style>
+    </head>
+    <body>
+
+    <h2>MVR-144 -- CSS object-fit: cover</h2>
+    <pre>Behavior Specification: 
+      The replaced content is sized to maintain its aspect ratio while filling the element’s entire content box. 
+      If the object's aspect ratio does not match the aspect ratio of its box, then the object will be clipped to fit.
+      TL;DR: 同時塞滿寬高, 多出來的地方裁掉
+    </pre>
+    <pre> Platform Capability Requirements:
+      1) Scale up & down
+      2) Center-based Clipping
+    </pre>
+    
+    <video secondary autoplay controls muted>
+      <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+    </video>
+
+    <video class="cover narrow" secondary autoplay controls muted>
+      <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+    </video>
+
+
+    </body>
+</html>
